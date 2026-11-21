@@ -1,0 +1,55 @@
+{
+  "name": "dsh-awesome-stars",
+  "version": "1.0.0",
+  "description": "Star rankings, star sorting and a tech dashboard for the DSH plugin catalog (takes over the Discover tab).",
+  "type": "module",
+  "license": "MIT",
+  "author": "liu-coco",
+  "homepage": "https://github.com/liu-coco/dsh-awesome-stars#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liu-coco/dsh-awesome-stars.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liu-coco/dsh-awesome-stars/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "plugin-market",
+    "github-stars",
+    "catalog"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "snapshot.json",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
+    }
+  }
+}
